@@ -18,7 +18,7 @@ from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
 from catboost import CatBoostRegressor
 import optuna
-
+from sklearn.preprocessing import StandardScaler
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -329,7 +329,7 @@ def _build_mol(smile: str):
     return mol
 import pandas as pd
 import numpy as np
-
+scaler = StandardScaler()
 def predict_sol_smiles(smiles):
 
     if isinstance(smiles, str):
